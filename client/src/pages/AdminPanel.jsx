@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function AdminProfile() {
+
+  const navigate = useNavigate();
   const [profile, setProfile] = useState({
     name: "Admin User",
     role: "user",
@@ -19,7 +22,7 @@ export default function AdminProfile() {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-purple-100 via-white to-blue-100 flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl p-6 sm:p-8 space-y-6">
-        
+
         {/* Profile Picture */}
         <div className="flex justify-center">
           <div className="relative w-24 h-24 sm:w-28 sm:h-28">
@@ -69,12 +72,16 @@ export default function AdminProfile() {
           <div>
             <label className="block mb-1 text-sm font-semibold text-gray-700">Role</label>
             <div className="flex items-center gap-3">
-              <input
-                type="text"
+              <select
+                name="role"
                 value={profile.role}
-                disabled
-                className="w-full px-4 py-2 border-2 border-pink-200 rounded-xl bg-pink-50 text-sm text-pink-800 font-semibold"
-              />
+                onChange={handleChange}
+                className="w-full px-4 py-2 border-2 border-pink-200 rounded-xl bg-pink-50 text-sm text-pink-800 font-semibold focus:outline-none focus:ring-2 focus:ring-pink-400 transition"
+              >
+                <option value="endusers">End Users</option>
+                <option value="supportagent">Support Agent</option>
+                <option value="admin">Admin</option>
+              </select>
               <button
                 type="button"
                 onClick={handleUpgrade}
@@ -110,6 +117,17 @@ export default function AdminProfile() {
               <option>Hindi</option>
               <option>Marathi</option>
             </select>
+          </div>
+
+          {/* Save Button */}
+          <div className="flex justify-end">
+            <button
+              type="button"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition"
+              onClick={() => navigate('/dashboard')}
+            >
+              Save
+            </button>
           </div>
         </form>
       </div>
