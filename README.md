@@ -24,7 +24,7 @@ QuickDesk is a straightforward help desk/ticketing system, designed to connect u
 ## 🏗 Tech Stack
 
 - **Backend:** Java, Spring Boot, Spring Data JPA, Hibernate
-- **Frontend:** ReactJS, Bootstrap, HTML, CSS, AJAX
+- **Frontend:** ReactJS, Bootstrap, HTML, CSS.
 - **Database:** MySQL
 - **API:** RESTful endpoints (Spring Boot)
 - **Authentication:** Spring Security & JWT
