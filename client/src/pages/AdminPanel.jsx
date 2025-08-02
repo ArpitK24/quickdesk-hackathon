@@ -124,7 +124,7 @@ export default function AdminProfile() {
             <button
               type="button"
               className="px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold rounded-xl shadow-lg hover:scale-105 transition"
-              onClick={() => navigate('/navbar')}
+              onClick={() => navigate('/dashboard')}
             >
               Save
             </button>
