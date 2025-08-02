@@ -33,10 +33,11 @@ public class AuthController {
         try {
             userService.register(dto);
             return ResponseEntity.ok("User registered successfully");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Registration failed: " + e.getMessage());
+        } catch(Exception e) {
+            return ResponseEntity.badRequest().body("Error: " + e.getMessage());
         }
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthToken(@RequestBody JwtRequest req) {

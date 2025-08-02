@@ -14,8 +14,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.quickDesk.security.CustomUserDetailsService;
-import com.quickDesk.config.JwtAuthenticationEntryPoint;
-import com.quickDesk.config.JwtRequestFilter;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 
