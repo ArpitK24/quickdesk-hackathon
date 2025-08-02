@@ -105,6 +105,7 @@ function Register() {
         <button
           type="submit"
           className="w-full py-2 px-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold rounded-lg shadow-lg hover:scale-105 transition mb-4"
+          onClick={() => navigate('/profile')}
         >
           Register
         </button>
