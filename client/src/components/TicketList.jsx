@@ -7,73 +7,77 @@ function TicketList() {
   const [sortBy, setSortBy] = useState('date')
 
   return (
-    
-      <div className="flex flex-wrap items-center gap-6">
-        <label className="flex items-center gap-2 font-medium text-gray-700">
+    <div className="w-full bg-white py-4 px-4 flex flex-col md:flex-row items-center justify-between rounded-lg border border-gray-200">
+      {/* Left side */}
+      <div className="mb-3 md:mb-0">
+        <label className="flex items-center gap-2 font-medium text-blue-700">
           <input
             type="checkbox"
             checked={showOpenOnly}
             onChange={e => setShowOpenOnly(e.target.checked)}
             className="accent-blue-600 w-4 h-4"
           />
-          Show Open Only
+          <span className="text-sm">Show Open Only</span>
         </label>
+      </div>
 
-        <label className="flex flex-col font-medium text-gray-700">
-          <span>Categories:</span>
+      {/* Right side */}
+      <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-col font-medium text-blue-700 text-sm">
+          <span className="font-bold mb-1 text-base">Categories</span>
           <select
             value={category}
             onChange={e => setCategory(e.target.value)}
-            className="mt-1 p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-1 rounded border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[100px] bg-white"
           >
-            <option value="">All</option>
             <option value="bug">Bug</option>
             <option value="feature">Feature</option>
             <option value="support">Support</option>
           </select>
-        </label>
+        </div>
 
-        <label className="flex flex-col font-medium text-gray-700">
-          <span>Status:</span>
+        <div className="flex flex-col font-medium text-blue-700 text-sm">
+          <span className="font-bold mb-1 text-base">Status</span>
           <select
             value={status}
             onChange={e => setStatus(e.target.value)}
-            className="mt-1 p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-1 rounded border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-400 min-w-[100px] bg-white"
           >
-            <option value="">All</option>
             <option value="open">Open</option>
             <option value="closed">Closed</option>
             <option value="pending">Pending</option>
           </select>
-        </label>
+        </div>
 
-        <div className="flex items-center gap-2">
-          <span className="font-medium text-gray-700">Sort By:</span>
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              name="sortBy"
-              value="date"
-              checked={sortBy === 'date'}
-              onChange={e => setSortBy(e.target.value)}
-              className="accent-blue-600 w-4 h-4"
-            />
-            Date
-          </label>
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              name="sortBy"
-              value="priority"
-              checked={sortBy === 'priority'}
-              onChange={e => setSortBy(e.target.value)}
-              className="accent-blue-600 w-4 h-4"
-            />
-            Priority
-          </label>
+        <div className="flex flex-col font-medium text-blue-700 text-sm">
+          <span className="font-bold mb-1 text-base">Sort By</span>
+          <div className="flex items-center gap-2">
+            <label className="flex items-center gap-1">
+              <input
+                type="radio"
+                name="sortBy"
+                value="date"
+                checked={sortBy === 'date'}
+                onChange={e => setSortBy(e.target.value)}
+                className="accent-blue-600 w-4 h-4"
+              />
+              Date
+            </label>
+            <label className="flex items-center gap-1">
+              <input
+                type="radio"
+                name="sortBy"
+                value="priority"
+                checked={sortBy === 'priority'}
+                onChange={e => setSortBy(e.target.value)}
+                className="accent-blue-600 w-4 h-4"
+              />
+              Priority
+            </label>
+          </div>
         </div>
       </div>
-   
+    </div>
   )
 }
 
