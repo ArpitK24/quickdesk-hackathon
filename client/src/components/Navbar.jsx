@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="w-full flex items-center justify-between px-6 py-3 bg-white shadow-md border-b border-purple-200">
       {/* Left: Brand */}
       <div className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-        QuickDesk
+        Admin
       </div>
       {/* Right: Icons & Buttons */}
       <div className="flex items-center gap-4">
@@ -21,9 +21,9 @@ function Navbar() {
           Dashboard
         </button>
         {/* Admin Button */}
-        <button className="px-4 py-1 rounded-full border-2 border-purple-400 text-purple-700 font-semibold bg-white hover:bg-purple-100 shadow transition">
+        {/* <button className="px-4 py-1 rounded-full border-2 border-purple-400 text-purple-700 font-semibold bg-white hover:bg-purple-100 shadow transition">
           Admin
-        </button>
+        </button> */}
       </div>
     </nav>
   );

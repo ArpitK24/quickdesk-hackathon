@@ -5,7 +5,6 @@ import TicketList from '../components/TicketList'
 function Dashboard() {
   return (
     <>
-      <Navbar />
       <TicketList />
     </>
   )
