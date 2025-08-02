@@ -1,0 +1,18 @@
+package com.quickDesk.model;
+
+public class JwtResponse {
+    private String jwtToken;
+
+    // Constructor
+    public JwtResponse(String jwtToken) {
+        this.jwtToken = jwtToken;
+    }
+
+    public String getJwtToken() {
+        return jwtToken;
+    }
+
+    public void setJwtToken(String jwtToken) {
+        this.jwtToken = jwtToken;
+    }
+}
