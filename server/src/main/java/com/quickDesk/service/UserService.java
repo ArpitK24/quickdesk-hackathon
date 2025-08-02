@@ -11,11 +11,16 @@ import com.quickDesk.repository.UserRepository;
 @Service
 public class UserService {
     @Autowired private UserRepository userRepo;
-    @Autowired private PasswordEncoder encoder;
+    @Autowired private PasswordEncoder passwordEncoder;
 
     public User register(UserDTO dto) {
-		return null;
-        // Validate input, encode password, save new user
+        User user = new User();
+        user.setUsername(dto.getUsername());
+        user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        user.setEmail(dto.getEmail());
+        user.setPhoneNumber(dto.getPhoneNumber());
+        return userRepo.save(user);   
     }
 }
+
 
